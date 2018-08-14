@@ -7,10 +7,32 @@ public class Alg_012 {
 
 	public static void main(String[] args) {
 		String abc = "dddccdbba";
-		System.out.println(firstUniqChar_2(abc));
+		System.out.println(firstUniqChar(abc));
 	}
 
 	public static int firstUniqChar(String s) {
+		char[] charArray = s.toCharArray();
+		if (charArray.length == 1) {
+			return 0;
+		}
+		// 简单的嵌套循环遍历判断所有字符
+		o: for (int i = 0; i < charArray.length; i++) {
+			for (int j = 0; j < charArray.length; j++) {
+				if (i != j && charArray[i] == charArray[j]) {
+					continue o;
+				}
+				// 如果循环到最后一位仍然没有相同字符则为唯一字符
+				if (j == charArray.length - 1) {
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
+
+	// 超时方法↓
+
+	public static int firstUniqChar_01(String s) {
 		String new_s = s;
 		char[] charArray = s.toCharArray();
 		if (charArray.length == 1) {
@@ -31,26 +53,6 @@ public class Alg_012 {
 		for (int i = 0; i < new_charArray.length; i++) {
 			if (new_charArray[i] != '0') {
 				return i;
-			}
-		}
-		return -1;
-	}
-
-	public static int firstUniqChar_2(String s) {
-		char[] charArray = s.toCharArray();
-		if (charArray.length == 1) {
-			return 0;
-		}
-		// 简单的嵌套循环遍历判断所有字符
-		o: for (int i = 0; i < charArray.length; i++) {
-			for (int j = 0; j < charArray.length; j++) {
-				if (i != j && charArray[i] == charArray[j]) {
-					continue o;
-				}
-				// 如果循环到最后一位仍然没有相同字符则为唯一字符
-				if (j == charArray.length - 1) {
-					return i;
-				}
 			}
 		}
 		return -1;

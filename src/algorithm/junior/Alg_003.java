@@ -28,7 +28,7 @@ public class Alg_003 {
 	// 超时方法↓
 
 	// 需要旋转多次，数组长度越长复杂度越高
-	public static void rotate_001(int[] nums, int k) {
+	public static void rotate_01(int[] nums, int k) {
 		// 相当于向右旋转k次，每次旋转一位
 		for (int i = 0; i < k; i++) {
 			nums = once(nums);

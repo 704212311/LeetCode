@@ -6,35 +6,35 @@ package algorithm.junior;
 public class Alg_016 {
 
 	public static void main(String[] args) {
-		int[] nums = { 1, 0 };
 		int[] nums1 = { 1, 2, 4, 5, 7, 8, 0, 0, 0 };
 		int[] nums2 = { 3, 6, 9 };
-		nums1 = process(nums, 0);
+		int m = 6;
+		int n = 3;
+		nums1 = merge(nums1, m, nums2, n);
 		for (int i : nums1) {
 			System.out.print(i + " ");
 		}
-		int m = nums1.length;
-		int n = nums2.length;
 	}
 
-	public void merge(int[] nums1, int m, int[] nums2, int n) {
-		if (nums1.length < m + n) {
-			return;
+	public static int[] merge(int[] nums1, int m, int[] nums2, int n) {
+		// 合并两个数组然后冒泡
+		for (int i = 0; i < n; i++) {
+			nums1[m + i] = nums2[i];
 		}
+		sort(nums1);
+		return nums1;
 	}
 
-	// 定义一个方法，将nums数组从下表n开始往后推移一位
-	public static int[] process(int[] nums, int n) {
-		if (n > nums.length - 2) {
-			return nums;
-		}
-		for (int i = nums.length - 1; i >= n; i--) {
-			if (i != n) {
-				int temp = nums[i];
-				nums[i] = nums[i - 1];
-				nums[i - 1] = temp;
+	// 冒泡
+	public static void sort(int[] nums) {
+		for (int i = 0; i < nums.length; i++) {
+			for (int j = 0; j < nums.length - 1; j++) {
+				if (nums[j] > nums[j + 1]) {
+					int temp = nums[j];
+					nums[j] = nums[j + 1];
+					nums[j + 1] = temp;
+				}
 			}
 		}
-		return nums;
 	}
 }

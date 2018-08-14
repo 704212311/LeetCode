@@ -20,6 +20,8 @@ public class Alg_014 {
 		System.out.println(countPrimes(10));
 	}
 
+	// 超时方法↓
+
 	public static int countPrimes(int n) {
 		if (n < 2) {
 			return 0;
