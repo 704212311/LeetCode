@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 二叉树的前序遍历
  */
-public class Alg_001 {
+public class Str_001 {
 
 	public static void main(String[] args) {
 		TreeNode a = new TreeNode(1);
