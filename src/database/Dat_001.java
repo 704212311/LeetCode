@@ -5,6 +5,8 @@ package database;
  */
 public class Dat_001 {
 
+	// OR的使用
+
 	public static void main(String[] args) {
 		// SELECT
 		// name,

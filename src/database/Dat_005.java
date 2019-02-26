@@ -5,6 +5,8 @@ package database;
  */
 public class Dat_005 {
 
+	// LEFT JOIN 左外联查询的使用
+
 	public static void main(String[] args) {
 		// SELECT
 		// p.FirstName,

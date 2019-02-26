@@ -5,6 +5,8 @@ package database;
  */
 public class Dat_007 {
 
+	// NOT IN 的使用
+
 	public static void main(String[] args) {
 		// SELECT
 		// NAME AS Customers

@@ -5,6 +5,8 @@ package database;
  */
 public class Dat_006 {
 
+	// 子查询的使用
+
 	public static void main(String[] args) {
 		// SELECT
 		// em. NAME Employee
